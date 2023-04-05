@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    </head>
+    <body onload="displayItems()" >
+       
+        <input type="text" placeholder="Item Name" id="itemName">
+        <input type="text" placeholder="Item Price" id="itemPrice">
+        <input type="text" placeholder="Quantity" id="itemQuantity">
+        <button onclick="addItems()">Add Items</button>
+        <hr>
+        <div id="disp"></div>
+        <script>
+            var allItems = [
+                {name:"Goody Goody",price:100,quantity:200},
+                {name:"Baba Dudu",price:300,quantity:500}
+            ]   
+            // console.log(allItems[0].name)
+            function addItems (){
+                var item = {
+                    name:itemName.value,
+                    price:itemPrice.value,
+                    quantity: itemQuantity.value
+                }
+                allItems.push(item)
+                displayItems()
+            }
+            function displayItems(){
+                disp.innerHTML = ""
+                for (var index = 0; index < allItems.length; index++) {
+                    disp.innerHTML += `
+                        <h1>
+                            ${allItems[index].name} 
+                            ${allItems[index].price} 
+                            ${allItems[index].quantity}
+                        </h1>
+                        <button onclick="deleteItem(${index})">Delete</button>
+                        <button onclick="editItem(${index})">Edit</button>
+                    `
+                }
+            }
+            function deleteItem(userIndex){
+                var response=confirm("Are you sure sure sure sure you want to delete? If you delete ths thing now, you no go see am again o")
+                if(response==true){
+                    allItems.splice(userIndex,1)
+                    console.log(allItems)
+                    displayItems()
+                }else{
+                    console.log("na God save you, e remain small i for delete am")
+                }
+                
+            }
+            function editItem(userIndex){
+                var itemName=prompt("what is the name")
+                var itemPrice=prompt("what is the price")
+                var itemQuantity=prompt("what is the quantity")
+                var newDetails = {
+                    name :itemName,
+                    price:itemPrice,
+                    quantity:itemQuantity,
+                }
+                allItems.splice(userIndex,1,newDetails)
+                displayItems()
+                console.log(allItems)
+            }
+            
+            // Objects.
+            // var allStudents = []
+            // var olamide = {
+            //     firstname: "Olamide",
+            //     lastname: "SQI",
+            //     age : 200,
+            //     password : "fish"
+            // }
+            
+        </script>
+    </body>
+</html>

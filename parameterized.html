@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <!-- Parameterized Function/ Functions with Parameters -->
+        <!-- DRY - Do Not Repeat Yourself -->
+        <button onclick="sayHello('Ade',999)">Say Ade</button>
+        <button onclick="sayHello('Sola',12)">Say Sola</button>
+        <button onclick="sayHello('Samuel')">Say Samuel</button>
+        <script>
+            function sayHello(myName,myAge=0){
+                // alert("Hello" + myName + "I am " + myAge + "years old")
+                alert(`Hello ${myName} I am ${myAge} years old`)
+            }
+            // function sayAde(){
+            //     alert("Hello Ade")
+            // }
+            // function saySola(){
+            //     alert("Hello Sola")
+            // }
+            // function saySamuel(){
+            //     alert("Hello Samuel")
+            // }
+           
+        </script>
+    </body>
+</html>

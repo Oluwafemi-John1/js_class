@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // var students = ["Fola","Sola", "Tola", "Samuel", "Bola"]
+        var allStudents = [];
+        var studentOne = {
+            name: "Damilola",
+            age: 976,
+            school: "SQI College of ICT",
+            code: function () {
+                console.log("Coding is my hobby");
+            }
+        }
+
+        studentOne.code()
+        // var goods = "rice"
+
+        var studentTwo = {
+            name:"Idowu",
+            age: 455,
+            school: "SQI College of ICT",
+            eat: function () {
+                console.log("I can eat like...");
+            }
+        }
+
+        studentTwo.eat()
+
+        var studentThree = {
+            name:"Victoria",
+            age: 855,
+            school: "SQI College of ICT"
+        }
+
+        // var arrayofCars = [Object,Object,Object]
+
+        allStudents.push(studentOne,studentTwo,studentThree);
+        console.log(allStudents[0].name,allStudents[0].age,allStudents[0].school);
+
+
+        // console.log(studentOne['name']);    // Bracket Notation
+        // console.log(studentOne.name,studentOne.age);       // Dot Notation
+
+        // Dot and Bracket Notation
+        </script>
+</body>
+</html>
