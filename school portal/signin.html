@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sign In Page</h1>
+    <input type="text" placeholder="Enter Your Email" id="mail">
+    <input type="text" placeholder="Password" id="pass">
+    <button onclick="signIn()">Sign In</button>
+    <script>
+        // Authentication
+        var allStudents = JSON.parse(localStorage.getItem("schoolPortal")) 
+        console.log(allStudents)
+        function signIn(){
+            var userFound = false
+            for (var index = 0; index < allStudents.length; index++) {
+                console.log(index)
+                 if(mail.value==allStudents[index].email && pass.value==allStudents[index].password){
+                    console.log(index)
+                    localStorage.setItem("userIndex",index)
+                    userFound = true
+                    break;
+                }
+            }
+            if(userFound==true){
+                alert("user is found o")
+                window.location.href = "dashboard.html"
+            }else{
+                alert("user not found")
+            }
+        }
+    </script>
+</body>
+</html>
